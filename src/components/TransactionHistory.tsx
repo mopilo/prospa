@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     }
   ),
   timeStyle: tw.style(
-    `text-[${colors.secondaryTextColor}] text-[12px] font-700`,
+    `text-[${colors.secondaryTextColor}] text-[12px]`,
     {
       fontFamily: "BR-Firma-Medium",
     }
