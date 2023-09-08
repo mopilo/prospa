@@ -15,6 +15,6 @@ On the AuthScreen I couldn't export the Prospa Logo and the wavy background as i
 For the wavy background an exported svg file would have be easier to recreate the present design, I had to come up with an alternative plain design. 
 
 
-APK: https://expo.dev/artifacts/eas/8pqEvLNL6HEb59mSvDyVQo.apk
+APK: https://expo.dev/artifacts/eas/qL37YPzjXHJtY4kVBMzMT5.apk
 
 Thanks
