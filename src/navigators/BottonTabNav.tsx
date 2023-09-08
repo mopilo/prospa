@@ -39,7 +39,12 @@ const BottomTabNav = () => {
       <TouchableOpacity
         onPress={onPress}
         activeOpacity={1}
-        style={tw`items-center flex-1 pt-[10px]`}
+        style={tw.style(
+          `items-center flex-1 pt-[10px]`,
+          focused &&
+            title !== "Business" &&
+            `border-t-[1px] border-[${colors.red}]`
+        )}
       >
         <View
           style={tw.style(
