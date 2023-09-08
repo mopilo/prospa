@@ -7,3 +7,13 @@ App was created using expo. Ensure you have expo installed globally.
 
 npx expo install
 npx expo start
+
+
+#Limitation
+
+On the AuthScreen I couldn't export the Prospa Logo and the wavy background as it wasn't made exportable
+For the wavy background an exported svg file would have be easier to recreate the present design, I had to come up with an alternative plain design. 
+
+Time is another Limitation too.
+
+Thanks
