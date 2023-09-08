@@ -24,9 +24,20 @@ export function DashbaordEssentials(){
             start={{ x: 0, y: 1 }}
             end={{ x: 1, y: 0 }}
           >
-            {/* <SvgXml xml={point} style={tw.style(`absolute right-[60px] top-[30px]`)} /> */}
+            <View
+              style={tw.style(
+                `bg-[${colors.white}] h-[22px] w-[32px] rounded-[5px] shadow-lg absolute top-[8px] right-[50px] items-center justify-center`
+              )}
+            >
+              <Text style={styles.dateStyle}>{"Oct 28 2021"}</Text>
+              <Text style={styles.amountStyle}>N3,000</Text>
+            </View>
+            <SvgXml
+              xml={point}
+              style={tw.style(`absolute right-[60px] top-[32px]`)}
+            />
             <SvgXml xml={graph} style={tw.style(`mt-[0px]`)} />
-            <View style={tw.style(`p-[13px]`)}>
+            <View style={tw.style(`pb-[13px] px-[13px]`)}>
               <Text
                 style={tw.style(`text-[${colors.white}] text-[8px] w-[89px]`, {
                   fontFamily: "BR-Firma-Regular",
@@ -101,3 +112,16 @@ export function DashbaordEssentials(){
       </View>
     );
 }
+
+const styles = StyleSheet.create({
+  containerStyle: tw.style(
+    `flex-row items-center justify-between mt-[14px] bg-[${colors.white}] py-[18px] px-[14px] rounded-[8px] border-[0.5px]  border-[#4CD964]`
+  ),
+  amountStyle: tw.style(`text-[${colors.deepBlue}] text-[6px]`, {
+    fontFamily: "BR-Firma-Bold",
+  }),
+ 
+  dateStyle: tw.style(`text-[${colors.secondaryTextColor}] text-[4px]`, {
+    fontFamily: "BR-Firma-Medium",
+  }),
+});

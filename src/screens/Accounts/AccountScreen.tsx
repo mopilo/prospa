@@ -1,20 +1,21 @@
 import React from "react";
-import { SafeAreaView, View, StyleSheet, Text } from "react-native";
+import { SafeAreaView, View, StyleSheet } from "react-native";
 import { useFonts } from "expo-font";
 import tw from "twrnc";
 import colors from "../../utils/colors";
 import { mainBody } from "../../utils/styles";
 import { AccountTopHeader } from "../../components/AccountTopHeader";
 import { AccountInfo } from "../../components/AccountInfo";
-import { SvgXml } from "react-native-svg";
 import { bookIcon, combinedShapeIcon, starIcon, transferIcon } from "../../utils/svg_images";
 import { AccountActions } from "../../components/AccountActions";
-import { ProgressBar } from "react-native-paper";
 import { AccountStats } from "../../components/AccountStats";
 import { TransactionHistory } from "../../components/TransactionHistory";
+import { RootStackScreenProps } from "../../navigators/RootNavigator";
 
 
-const AccountScreen = () => {
+const AccountScreen = ({
+  navigation,
+}: RootStackScreenProps<"AccountScreen">) => {
   const [fontsLoaded] = useFonts({
     "BR-Firma-Medium": require("../../../assets/fonts/BR-Firma-Medium.otf"),
     "BR-Firma-Regular": require("../../../assets/fonts/BR-Firma-Regular.otf"),
@@ -28,7 +29,7 @@ const AccountScreen = () => {
   return (
     <SafeAreaView style={[mainBody]}>
       <View style={styles.topContainer}>
-        <AccountTopHeader />
+        <AccountTopHeader onclick={()=>  navigation.goBack()} />
         <AccountInfo />
         <View style={styles.actionStyle}>
           <AccountActions
@@ -52,7 +53,7 @@ const AccountScreen = () => {
         <AccountStats color={colors.deepBlue} text={"Wallet balance"} />
       </View>
       <View style={styles.bottomContainer}>
-        <TransactionHistory/>
+        <TransactionHistory />
       </View>
     </SafeAreaView>
   );

@@ -1,15 +1,17 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Pressable } from "react-native";
 import { SvgXml } from "react-native-svg";
 import tw from "twrnc";
 import { backIcon } from "../utils/svg_images";
 import colors from "../utils/colors";
 
 
-export function AccountTopHeader(){
+export function AccountTopHeader({onclick}: {onclick:()=> void}){
     return (
       <View style={styles.topHeader}>
-        <SvgXml xml={backIcon} />
+        <Pressable onPress={()=> onclick()}>
+        <SvgXml xml={backIcon}  />
+        </Pressable>
         <View>
           <Text style={styles.textHeaderStyle}>Current Account</Text>
           <Text style={styles.accountStyle}>7274640071</Text>

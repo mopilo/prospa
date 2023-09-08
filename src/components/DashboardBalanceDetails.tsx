@@ -1,10 +1,10 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 
 import tw from "twrnc";
 import colors from "../utils/colors";
 
-export function DashboardBalanceDetails() {
+export function DashboardBalanceDetails({onclick}: {onclick: ()=> void}) {
   return (
     <View style={tw.style(`flex-row items-start justify-between  mt-[45px]`)}>
       <View>
@@ -33,13 +33,15 @@ export function DashboardBalanceDetails() {
           Available balance
         </Text>
       </View>
-      <Text
-        style={tw.style(`text-[10px] text-[${colors.red}]`, {
-          fontFamily: "BR-Firma-Medium",
-        })}
-      >
-        View accounts
-      </Text>
+      <Pressable onPress={()=>onclick()}>
+        <Text
+          style={tw.style(`text-[10px] text-[${colors.red}]`, {
+            fontFamily: "BR-Firma-Medium",
+          })}
+        >
+          View accounts
+        </Text>
+      </Pressable>
     </View>
   );
 }
